@@ -1,0 +1,44 @@
+<?php
+
+declare(strict_types=1);
+
+use App\Support\Env;
+
+$root = __DIR__ . '/..';
+$dotenvPath = $root . '/.env';
+if (file_exists($dotenvPath)) {
+    $lines = file($dotenvPath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    foreach ($lines as $line) {
+        if (str_starts_with(trim($line), '#')) {
+            continue;
+        }
+        [$name, $value] = array_pad(explode('=', $line, 2), 2, '');
+        $_ENV[trim($name)] = trim($value);
+        putenv(trim($name) . '=' . trim($value));
+    }
+}
+
+$connection = new PDO(
+    'mysql:host=' . Env::get('DB_HOST', '127.0.0.1') . ';port=' . Env::get('DB_PORT', '3306') . ';dbname=' . Env::get('DB_DATABASE', 'cgac') . ';charset=utf8mb4',
+    Env::get('DB_USERNAME', 'root'),
+    Env::get('DB_PASSWORD', '')
+);
+
+$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$sql = "INSERT INTO roles (name, description) VALUES (:name, :description) ON DUPLICATE KEY UPDATE description = VALUES(description)";
+$roles = [
+    ['Super Administrator', 'Full system configuration and access to all modules'],
+    ['Content Administrator', 'Manage programmes, watchwords, conventions, sermons and articles'],
+    ['Editor', 'Create and edit approved content'],
+    ['Media Administrator', 'Manage media assets and galleries'],
+    ['Finance Administrator', 'Manage financial records and giving reports'],
+    ['Prayer Team', 'Review and respond to prayer requests'],
+    ['Viewer', 'Read-only access to approved information'],
+];
+
+foreach ($roles as [$name, $description]) {
+    $statement = $connection->prepare($sql);
+    $statement->execute([':name' => $name, ':description' => $description]);
+}
+
+echo "Roles seeded.";
