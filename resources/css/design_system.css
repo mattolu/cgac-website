@@ -1,0 +1,40 @@
+/* Design system tokens and base styles */
+:root{
+  --cgac-primary:#002b36;
+  --cgac-accent:#b88b2f;
+  --cgac-bg:#fffef8;
+  --cgac-surface:#ffffff;
+  --cgac-text:#0f1721;
+  --cgac-muted:#6b7280;
+  --cgac-positive:#166534;
+  --cgac-negative:#b91c1c;
+
+  --spacing-xs:4px;
+  --spacing-sm:8px;
+  --spacing-md:16px;
+  --spacing-lg:24px;
+  --border-radius:8px;
+}
+
+body{
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color:var(--cgac-bg);
+  color:var(--cgac-text);
+  line-height:1.45;
+}
+
+a{color:var(--cgac-primary);}
+
+.btn-primary{
+  background:var(--cgac-primary);
+  border-color:var(--cgac-primary);
+}
+
+.card{
+  border-radius:var(--border-radius);
+  box-shadow:0 1px 6px rgba(15,23,33,0.06);
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{transition:none!important}
+}
