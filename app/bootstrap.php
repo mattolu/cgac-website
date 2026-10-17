@@ -2,14 +2,16 @@
 
 declare(strict_types=1);
 
-require_once __DIR__ . '/../app/Support/Env.php';
-require_once __DIR__ . '/../app/Core/Database.php';
-require_once __DIR__ . '/../app/Models/User.php';
-require_once __DIR__ . '/../app/Services/AuthService.php';
-require_once __DIR__ . '/../app/Middleware/AuthMiddleware.php';
+require_once __DIR__ . '/Support/Env.php';
+require_once __DIR__ . '/Core/Database.php';
+require_once __DIR__ . '/Models/User.php';
+require_once __DIR__ . '/Services/AuthService.php';
+require_once __DIR__ . '/Middleware/AuthMiddleware.php';
 
 use App\Core\Database;
 use App\Services\AuthService;
+
+App\Support\Env::loadFromFile(__DIR__ . '/../.env');
 
 session_name('cgac_session');
 if (session_status() === PHP_SESSION_NONE) {

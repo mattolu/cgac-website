@@ -2,21 +2,14 @@
 
 declare(strict_types=1);
 
+require_once __DIR__ . '/../../app/bootstrap.php';
+
+use App\Core\Database;
 use App\Support\Env;
 
-$root = __DIR__ . '/..';
+$root = __DIR__ . '/../..';
 $dotenvPath = $root . '/.env';
-if (file_exists($dotenvPath)) {
-    $lines = file($dotenvPath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-    foreach ($lines as $line) {
-        if (str_starts_with(trim($line), '#')) {
-            continue;
-        }
-        [$name, $value] = array_pad(explode('=', $line, 2), 2, '');
-        $_ENV[trim($name)] = trim($value);
-        putenv(trim($name) . '=' . trim($value));
-    }
-}
+App\Support\Env::loadFromFile($dotenvPath);
 
 $connection = new PDO(
     'mysql:host=' . Env::get('DB_HOST', '127.0.0.1') . ';port=' . Env::get('DB_PORT', '3306') . ';dbname=' . Env::get('DB_DATABASE', 'cgac') . ';charset=utf8mb4',
