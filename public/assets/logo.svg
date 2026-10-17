@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700" role="img" aria-labelledby="title desc">
+  <title id="title">CGAC Church Logo</title>
+  <desc id="desc">Circular church logo with a blue ring and white center, open Bible, and cross.</desc>
+  <defs>
+    <linearGradient id="ring" x1="0" x2="1">
+      <stop offset="0%" stop-color="#0f2d97"/>
+      <stop offset="100%" stop-color="#0a1e70"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="350" cy="350" r="315" fill="url(#ring)" stroke="#f2f2f2" stroke-width="18"/>
+  <circle cx="350" cy="350" r="260" fill="#f3f3f3"/>
+
+  <g font-family="'Segoe UI', Arial, sans-serif" fill="#fff" font-weight="700" text-anchor="middle">
+    <text x="350" y="80" font-size="44" letter-spacing="2">CHRIST GOSPEL APOSTOLIC CHURCH</text>
+  </g>
+
+  <g transform="translate(350 145)">
+    <g fill="#102b7a" stroke="#111" stroke-width="2">
+      <path d="M26 105 L63 105 L95 140 L95 184 L63 184 L26 148 Z" opacity="0.9"/>
+      <path d="M-26 105 L-63 105 L-95 140 L-95 184 L-63 184 L-26 148 Z" opacity="0.9"/>
+      <path d="M0 60 L20 90 L20 175 L-20 175 L-20 90 Z"/>
+    </g>
+  </g>
+
+  <g transform="translate(0 0)">
+    <g fill="#f5f5f5" stroke="#111" stroke-width="8" stroke-linejoin="round">
+      <path d="M200 372 L265 300 L300 300 L300 470 L265 470 L265 390 L200 390 Z"/>
+      <path d="M500 372 L435 300 L400 300 L400 470 L435 470 L435 390 L500 390 Z"/>
+      <path d="M260 300 L440 300 L410 370 L290 370 Z"/>
+      <path d="M250 300 L300 290 L353 300 L350 470 L250 470 Z"/>
+      <path d="M450 300 L400 290 L347 300 L350 470 L450 470 Z"/>
+      <path d="M350 300 L350 470"/>
+      <path d="M200 470 L500 470"/>
+      <path d="M250 330 L450 330" opacity="0.9"/>
+    </g>
+
+    <g fill="#111" stroke="#111" stroke-width="3">
+      <path d="M350 240 L360 300 L370 300 L370 365 L330 365 L330 300 L340 300 Z"/>
+      <path d="M204 118 L350 40 L496 118 L478 145 L350 90 L222 145 Z" fill="#f8f8f8"/>
+    </g>
+
+    <g fill="#f4f4f4" stroke="#111" stroke-width="6" stroke-linejoin="round">
+      <path d="M250 190 L350 150 L450 190 L350 230 Z"/>
+      <path d="M230 200 L250 190 L350 150 L450 190 L470 200 L350 260 Z"/>
+      <path d="M181 196 L219 190 L247 206 L217 228 L181 220 Z"/>
+      <path d="M519 196 L481 190 L453 206 L483 228 L519 220 Z"/>
+    </g>
+  </g>
+
+  <g>
+    <path d="M150 502 C210 540, 265 560, 350 560 C435 560, 490 540, 550 502" fill="none" stroke="#d5d5d5" stroke-width="8" stroke-linecap="round"/>
+    <path d="M175 520 L208 496 L235 535 L175 520 Z" fill="#fff" stroke="#111" stroke-width="3"/>
+    <path d="M525 520 L492 496 L465 535 L525 520 Z" fill="#fff" stroke="#111" stroke-width="3"/>
+  </g>
+
+  <g font-family="'Segoe UI', Arial, sans-serif" fill="#fff" font-weight="800" text-anchor="middle">
+    <text x="350" y="595" font-size="40">GOD IS OUR GUIDE</text>
+  </g>
+  <g font-family="'Segoe UI', Arial, sans-serif" fill="#fff" font-weight="800" text-anchor="middle">
+    <text x="350" y="640" font-size="46">WORLDWIDE</text>
+  </g>
+</svg>
